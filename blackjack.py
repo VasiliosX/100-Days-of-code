@@ -59,15 +59,15 @@ while want=='y':
 
         print(f"The user's score is {user_score}")
 
-        print(f"The computer's score is {computer_score}")
+
 
         if computer_score == 0 or user_score > 21:
             end = True
-            print('Game ends, you lose')
+            print(f'Game ends, you lose, your score is {user_score}, the computer score is {computer_score}')
 
         elif computer_score>21 or user_score==0:
             end=True
-            print('Game ends, you win')
+            print(f'Game ends, you win, your score is {user_score}, the computer score is {computer_score}')
 
 
 
@@ -77,12 +77,23 @@ while want=='y':
 
             if play=='n':
                 if computer_score>=user_score:
+
                     print('You lose, computer wins')
-                    cont=False
+                    cont = False
                 elif user_score>computer_score:
-                    print('You win, the computer loses')
-                    cont=False
+                    while computer_score<=17:
+                        computer_cards.append(deal_card(list_of_cards=cards))
+                        computer_score = calculate_score(drawn_cards=computer_cards)
+                        print(computer_score)
+                    if user_score>computer_score or computer_score>21:
+                            print(f'Game ends, you win, your score is {user_score}, the computer score is {computer_score}')
+                            cont=False
+                    elif user_score<computer_score or user_score>21:
+                            print(f'Game ends, you lose, your score is {user_score}, the computer score is {computer_score}')
+                            cont=False
             elif play=='y':
                 cont=True
 
     want = input('Do you want to play BlackJack? Type y for yes and n for no:')
+
+
