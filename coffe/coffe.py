@@ -1,9 +1,12 @@
 from coffe_data import MENU,resources
-
+rem_water=resources['water']
+rem_coffee=resources['coffee']
+rem_milk=resources['milk']
 cont=True
 total_money=0
 while cont:
     enough=True
+
 
     order=input('What would you like? (espresso/latte/cappuccino):')
     if order=='report':
@@ -19,7 +22,7 @@ while cont:
         if order != 'espresso':
             rem_milk = resources['milk'] - MENU[order]['ingredients']['milk']
 
-            make = True
+        make = True
         if rem_coffee<0:
             print('Sorry, not enough coffee')
             enough=False
@@ -52,7 +55,7 @@ while cont:
 
 
             if make:
-                print(f'Here is ${rest} in change')
+                print(f'Here is ${round(rest,3)} in change')
                 print(f'Here is your {order}')
                 resources['water']=rem_water
                 resources['coffee']=rem_coffee
