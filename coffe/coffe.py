@@ -56,7 +56,7 @@ while cont:
 
             if make:
                 print(f'Here is ${round(rest,3)} in change')
-                print(f'Here is your {order}')
+                print(f'Here is your {order}☕')
                 resources['water']=rem_water
                 resources['coffee']=rem_coffee
                 total_money=total-rest
