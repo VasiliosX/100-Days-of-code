@@ -4,19 +4,19 @@ rem_coffee=resources['coffee']
 rem_milk=resources['milk']
 cont=True
 total_money=0
+order=input('What would you like? (espresso/latte/cappuccino):')
+if order=='off':
+    cont=False
 while cont:
     enough=True
 
 
-    order=input('What would you like? (espresso/latte/cappuccino):')
+
+
     if order=='report':
         print(f'Water:{resources["water"]}ml\nMilk:{resources["milk"]}ml\nCoffee:{resources["coffee"]}g')
         print(f'Money:${total_money}')
-
-
-
-
-    if order!='report':
+    elif order!='report':
         rem_water = resources['water'] - MENU[order]['ingredients']['water']
         rem_coffee = resources['coffee'] - MENU[order]['ingredients']['coffee']
         if order != 'espresso':
@@ -63,5 +63,6 @@ while cont:
                 if order!='espresso':
                  resources['milk']=rem_milk
 
-
-
+    order = input('What would you like? (espresso/latte/cappuccino):')
+    if order=='off':
+        cont=False
