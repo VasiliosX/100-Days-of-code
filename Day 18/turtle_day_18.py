@@ -31,7 +31,7 @@ timmy = t.Turtle()
 timmy.shape('turtle')
 
 screen = t.Screen()
-
+timmy.penup()
 
 
 for j in range(10):
@@ -41,10 +41,10 @@ for j in range(10):
     timmy.sety(-200+50*j)
 
     for _ in range(10):
-        timmy.pendown()
+
         color=random.choice(colors_list)
-        timmy.dot(10,color)
-        timmy.penup()
+        timmy.dot(20,color)
+
         timmy.forward(50)
 
 
