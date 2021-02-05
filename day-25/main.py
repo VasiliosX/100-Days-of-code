@@ -17,7 +17,7 @@ turtle.shape(image)
 number_of_states_found=0
 
 
-while number_of_states_found<52:
+while number_of_states_found<50:
 
     found=False
     state_name=screen.textinput(title=f"{number_of_states_found}/50 states found", prompt="What's another state's name")
